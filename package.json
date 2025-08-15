@@ -1,0 +1,50 @@
+{
+  "name": "n8n-nodes-larkbase",
+  "version": "1.0.0",
+  "description": "N8N custom node for LarkBase (Feishu Base) integration",
+  "keywords": [
+    "n8n-community-node-package"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/cuong285/n8n-nodes-larkbase",
+  "author": {
+    "name": "Cuong285",
+    "email": "cuong285@example.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuong285/n8n-nodes-larkbase.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "format": "prettier nodes credentials --write",
+    "lint": "eslint nodes credentials package.json",
+    "lintfix": "eslint nodes credentials package.json --fix",
+    "prepublishOnly": "npm run build && npm run lint -s"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/LarkBaseApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/LarkBase/LarkBase.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint-plugin-n8n-nodes-base": "^1.11.0",
+    "gulp": "^4.0.2",
+    "n8n-workflow": "*",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.4"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
